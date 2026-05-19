@@ -26,5 +26,8 @@ jobs:
       - name: Build Docker image
         run: docker build -t docker-push-dockerhub .
 
+      - name: tag to docker hub
+        run: docker tag docker-push-dockerhub ${{ secrets.DOCKER_USERNAME }}/docker-push-dockerhub
+        
       - name: push to docker hub
-        run: docker push ${{ secrets.DOCKER_USERNAME }}/docker-push-dockerhub:latest
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/docker-push-dockerhub
