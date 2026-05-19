@@ -27,4 +27,4 @@ jobs:
         run: docker build -t docker-ci-app .
 
       - name: push to docker hub
-        run: docker push docker-ci-app
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/dockerhub-pipeline:latest
