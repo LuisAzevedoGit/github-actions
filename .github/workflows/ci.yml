@@ -24,7 +24,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build Docker image
-        run: docker build -t docker-ci-app .
+        run: docker build -t docker-push-dockerhub .
 
       - name: push to docker hub
-        run: docker push ${{ secrets.DOCKER_USERNAME }}/dockerhub-pipeline:latest
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/docker-push-dockerhub:latest
