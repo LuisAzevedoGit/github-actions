@@ -28,6 +28,6 @@ jobs:
 
       - name: tag to docker hub
         run: docker tag docker-push-dockerhub ${{ secrets.DOCKER_USERNAME }}/docker-push-dockerhub
-        
+
       - name: push to docker hub
-        run: docker push ${{ secrets.DOCKER_USERNAME }}/docker-push-dockerhub
+        run: docker push luisazevedo9/docker-push-dockerhub:latest
