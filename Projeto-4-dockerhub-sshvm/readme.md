@@ -182,11 +182,24 @@ Secrets utilizados:
 | DOCKER_PASSWORD | Password / Access Token DockerHub |
 | EC2_HOST | Public IPv4 da EC2 |
 | EC2_USER | Utilizador SSH (`ubuntu`) |
-| EC2_SSH_KEY | Chave privada SSH da EC2 |
+| EC2_SSH_KEY | Chave SSH copiada da EC2 |
 
 ---
 
 ## ☁️ Configuração AWS EC2
+
+
+Para este projeto foi criada uma **instância EC2 na AWS** com as seguintes características:
+
+| Configuração | Valor |
+|--------------|-------|
+| Cloud Provider | AWS |
+| Serviço | EC2 |
+| Sistema Operativo | Ubuntu Server |
+| Tipo de Instância | t2.micro |
+| Região | eu-north-1 |
+| Autenticação | SSH Key Pair |
+| Acesso | Public IPv4 |
 
 ### Instalação Docker
 
@@ -212,12 +225,6 @@ sudo systemctl start docker
 sudo usermod -aG docker ubuntu
 ```
 
-Logout/Login SSH:
-
-```bash
-exit
-ssh -i key.pem ubuntu@EC2-IP
-```
 
 ---
 
